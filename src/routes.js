@@ -13,7 +13,6 @@ class Routes extends Component {
     render() {
         return (
             <div>
-                <h1>Test</h1>
                 <Router>
                     <Switch>
                         <Route path="/login" component={Authlogin}/>
