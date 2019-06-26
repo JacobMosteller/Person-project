@@ -5,6 +5,7 @@ class Rsvp extends Component {
         return (
             <div>
                 <input type="text"/>
+                this is where i will get all the information
             </div>
         )
     }
