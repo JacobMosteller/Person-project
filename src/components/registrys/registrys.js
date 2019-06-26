@@ -4,7 +4,7 @@ class Registrys extends Component {
     render() {
         return (
             <div>
-                This is where i will link the registrys
+                
             </div>
         )
     }
