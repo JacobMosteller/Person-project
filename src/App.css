@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  font-family: sans-serif;
+}
+body{
+  background-color:#828080;
 }
 
 .App-logo {
@@ -30,4 +34,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.overhead{
+  display: flex;
+  background-color: #942D2D;
+}
+h1{
+  margin-left: 20px;
+}
+a:link, a:visited {
+  background-color: #942D2D;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: maroon;
 }
