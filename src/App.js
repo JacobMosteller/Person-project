@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import './App.css';
-import Routes from './routes'
-import {withRouter} from 'react-router-dom'
+import Routes from './routes';
+import {withRouter} from 'react-router-dom';
+import axios from 'axios';
 
 class App extends Component {
   constructor(){
@@ -9,7 +10,7 @@ class App extends Component {
   }
 
   goHome = () => {
-    this.props.history.push('/home')
+    this.props.history.push('/')
   }
 
   loginClick = () => {
@@ -23,6 +24,14 @@ rsvpClick = () => {
 registryClick = () => {
     this.props.history.push('/registry')
 }
+
+  componentDidMount(){
+    axios.get('/api/ping')
+    .then((res) => {
+      console.log(res.data)
+    })
+  }
+
   render() {
     return (
       <div className="App">

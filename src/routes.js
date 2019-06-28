@@ -13,11 +13,11 @@ class Routes extends Component {
         return (
             <div>
            <Switch>
-                <Route exact path="/home" component={Options}/>
                 <Route path="/login" component={Authlogin}/>
                 <Route path="/registry" component={Registrys}/>
                 <Route path="/rsvp" component={Rsvp}/>
                 <Route path="/auth" component={Authview}/>
+                <Route exact path="/" component={Options}/>
             </Switch>
             </div>
         )
