@@ -22,6 +22,7 @@ massive(process.env.DATABASE_URL)
     app.set('db', dbInstance)
     console.log('Db connected')
 }) 
+//im trying
 
 //Hosting
 app.use(express.static(path.join(__dirname, '/build')));
