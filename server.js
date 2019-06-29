@@ -8,8 +8,8 @@ const massive = require('massive');
 
 const app = express();
 
-massive(process.env.DATABASE_URL)
-    .then((dbInstance)=>{
+massive("postgres://ytxloeiowdjtzq:d0c86012465a00588458733cf29cf4fc0e1217b56b7da718106d25cd63bf9103@ec2-107-20-185-16.compute-1.amazonaws.com:5432/dc9og262l1dk4e?ssl=true")
+ .then((dbInstance)=>{
         console.log('db is connected')
         app.set('db', dbInstance)
     })
@@ -42,10 +42,6 @@ app.get('/api/ping', (req,res) => {
 app.post('/auth/login', (req,res,next)=>{
 const db = req.app.get('db');
 const{username, password} = req.body;
-// db.FIND([username])
-// .then((response)=>{
-//     res.send(response)
-// })
 db.user_table.findOne({username})
 .then((user)=>{
     if(!user){
@@ -70,13 +66,13 @@ app.get('/auth/user', (req,res,next)=>{
         res.send({success:false})
     }
 })
-app.post('/api/logout', (req,res,next)=>{
+app.post('/auth/logout', (req,res,next)=>{
     req.session.destroy();
     res.send({success:true})
 })
 
 
-    app.get('/*', (req,res) => {
+app.get('/*', (req,res) => {
     res.sendFile('index.html', {
         root: path.join(__dirname, "build")
     })

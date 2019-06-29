@@ -6,8 +6,8 @@ class Authlogin extends Component {
         username:'',
         password:''
     }
-    handleChange=(e)=>{
-        this.setState=({
+    handleChange = (e) => {
+        this.setState({
             [e.target.name]: e.target.value
         })
     }
@@ -29,10 +29,10 @@ class Authlogin extends Component {
         return (
             <div>
     <p>Username</p>
-    <input type="text" placeholder="Enter Username" name="username" onChange={this.handleChange} required/>
+        <input type="text" value={this.state.username} placeholder="Username" name="username" onChange={this.handleChange}/>
 
     <p>Password</p>
-    <input type="password" placeholder="Enter Password" name="password" onChange={this.handleChange} required/>
+        <input type="password" value={this.state.password} placeholder="Password" name="password" onChange={this.handleChange}/>
 
     <p></p>
     <button onClick={this.login}>Login</button>
